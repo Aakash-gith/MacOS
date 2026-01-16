@@ -64,10 +64,17 @@ const Hero = () => {
                 transition={{ delay: 0.5, duration: 1 }}
                 className="mt-20 w-full max-w-5xl px-6 relative"
             >
-                <div className="aspect-[16/9] md:aspect-[21/9] glass-panel p-4 shadow-2xl relative bg-white/40 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl flex items-center justify-center">
-                        <div className="text-gray-400 font-light flex items-center gap-2 text-sm md:text-base">
-                            <Monitor size={20} /> Advanced macOS Architecture
+                <div className="aspect-[16/9] md:aspect-[21/9] glass-panel p-2 shadow-2xl relative bg-white/40 overflow-hidden group">
+                    <img
+                        src="/hero.png"
+                        alt="MacOS Architecture"
+                        className="w-full h-full object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="bg-black/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span className="text-white font-medium tracking-wide flex items-center gap-2">
+                                <Monitor size={18} /> Advanced macOS Architecture
+                            </span>
                         </div>
                     </div>
                     <div className="absolute top-4 left-4 md:top-8 md:left-8 flex gap-2">
@@ -176,9 +183,15 @@ const App = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className="aspect-square glass-panel bg-zinc-800/50 border-zinc-700 flex items-center justify-center text-zinc-600">
-                            <Cpu size={120} className="text-apple-blue animate-pulse" />
+                    <div className="relative group">
+                        <div className="aspect-square glass-panel bg-zinc-800/50 border-zinc-700 overflow-hidden flex items-center justify-center">
+                            <img
+                                src="/architecture.png"
+                                alt="Apple Silicon"
+                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <Cpu size={60} className="absolute text-apple-blue bottom-8 left-8" />
                         </div>
                     </div>
                 </div>
